@@ -21,10 +21,10 @@ Una fila por (`reservoir_id`, `time_utc`).
 | `ndwi_threshold` | Umbral por observación del índice verde/SWIR, MNDWI, llamado `ndwi` en el método. |
 | `quality_score` | Score de selección basado en el percentil 75 de la banda verde. No es confianza calibrada. |
 | `scale` | Escala de cómputo en metros, fija por embalse; entre 10 y 58,70 m. |
-| `geometry_delivery` | Variante de transporte de la geometría; Alcántara se procesó mediante un asset. |
+| `geometry_delivery` | Transporte de la geometría mediante JSON o asset de Earth Engine. |
 | `geometry_json_sha256` | Identidad de la geometría efectiva según el hash de producción. |
 | `source_geometry_json_sha256` | Identidad de la geometría anterior al transporte. |
-| `geometry_asset_id` | Asset de Alcántara; vacío en los otros embalses. No garantiza acceso público al asset. |
+| `geometry_asset_id` | Identificador del asset cuando se utiliza; vacío en los demás casos. No garantiza acceso público. |
 | `computation_transport` | Cálculo interactivo, ventanas o exportación anual de tabla. |
 
 No se ha añadido interpolación, agregación anual ni filtrado posterior.
@@ -46,7 +46,5 @@ La primera y última observación no significan cobertura diaria.
 ## Geometrías
 
 Los polígonos fuente son los del benchmark MITECO reproyectados a CRS84,
-sin nueva simplificación. Para **Alcántara (`ES_RES_0528`)** se proporciona
-además el objeto GeoJSON `Polygon` efectivo, con los mismos 43.709 vértices
-y desplazamiento máximo medido de 0,00577 m tras el transporte. Este objeto
-se identifica por su archivo; no tiene una propiedad `reservoir_id`.
+sin nueva simplificación. `alcantara_effective_geometry.geojson.gz` contiene
+el `Polygon` efectivo de `ES_RES_0528`, sin propiedad `reservoir_id`.

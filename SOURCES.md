@@ -19,8 +19,6 @@ los 8 años. Los 318 tienen el periodo satelital 2017–2024 procesado.
 
 La escala es `max(10, sqrt(area_geometría_m2)/200)`. Se aplica selección de
 calidad, MNDWI con Canny/Otsu y relleno JRC; no se generan medias anuales.
-Alcántara tiene 1.200 observaciones: seis años compuestos por ventanas y dos
-exportaciones anuales (2020 y 2022), descargadas y verificadas.
 
 Las observaciones conservan exactamente el CSV integrado original al
 descomprimir. SHA-256 de ese CSV:

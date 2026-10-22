@@ -4,7 +4,7 @@
 
 Estimaciones de superficie de agua obtenidas con el método óptico
 Donchyts / Global Water Watch, usando Landsat y Sentinel-2 sobre una muestra
-MITECO de **318 embalses con capacidad ≥5 hm³**. Incluye Alcántara.
+MITECO de **318 embalses con capacidad ≥5 hm³**.
 Los ocho años están procesados para todos los embalses.
 
 ## Usar los datos
@@ -13,11 +13,11 @@ Los CSV usan UTF-8, separador `;` y superficies en **m²**. La clave de unión e
 `reservoir_id`. No necesitas Earth Engine ni instalar paquetes de Python.
 
 ```sh
-python example.py ES_RES_0528
+python example.py
 python example.py --verify
 ```
 
-La primera orden muestra las observaciones de Alcántara por año y sus rangos
+La primera orden muestra las observaciones de un embalse por año y sus rangos
 de superficie. La segunda comprueba los hashes de los archivos de datos.
 
 | Archivo | Contenido |
@@ -25,8 +25,7 @@ de superficie. La segunda comprueba los hashes de los archivos de datos.
 | `data/observations.csv.gz` | Observaciones por embalse y fecha UTC; 234.512 filas. |
 | `data/reservoirs.csv` | Nombres, demarcaciones, capacidades e identificadores de los 318 embalses. |
 | `data/coverage.csv` | Recuentos y procedencia de las 2.544 combinaciones embalse/año. |
-| `data/source_geometries.geojson.gz` | Polígonos fuente en CRS84: longitud, latitud. |
-| `data/alcantara_effective_geometry.geojson.gz` | Geometría efectiva usada para Alcántara, con cuantización inferior a 1 cm. |
+| `data/*.geojson.gz` | Polígonos fuente y geometría efectiva complementaria en CRS84: longitud, latitud. |
 
 Consulta [FIELDS.md](FIELDS.md) para interpretar las columnas.
 
